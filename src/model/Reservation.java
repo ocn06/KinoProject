@@ -5,14 +5,16 @@ import java.util.Date;
 public class Reservation {
 
     private String reservationName;
+    private Movie movie;
     private int seatNumber;
     private int movieHall;
     private Date reservationDate;
     private int reservationSize;
     private int reservationPrice;
 
-    public Reservation(String reservationName, int seatNumber, int movieHall, Date reservationDate, int reservationSize, int reservationPrice) {
+    public Reservation(String reservationName, Movie movie, int seatNumber, int movieHall, Date reservationDate, int reservationSize, int reservationPrice) {
         this.reservationName = reservationName;
+        this.movie = movie;
         this.seatNumber = seatNumber;
         this.movieHall = movieHall;
         this.reservationDate = reservationDate;
