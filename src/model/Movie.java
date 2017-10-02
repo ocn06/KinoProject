@@ -58,6 +58,4 @@ public class Movie {
         this.movieDescription = movieDescription;
     }
 
-
-
 }
