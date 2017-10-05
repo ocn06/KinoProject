@@ -18,12 +18,12 @@ import java.time.format.DateTimeFormatter;
 public class ReservationView {
     BorderPane borderPane = new BorderPane();
 
-    Label labelName = new Label("Navn");
-    Label labelMovie = new Label("Film");
+    Label labelName = new Label("Kundenavn");
+    Label labelMovie = new Label("Filmtitel");
     Label labelSeat = new Label("Sæde");
     Label labelHall = new Label();
     Label labelDate = new Label("Dato");
-    Label labelSize = new Label("Størrelse");
+    Label labelSize = new Label("Antal billetter");
 
     TextField textFieldName = new TextField();
     ComboBox comboBoxMovie = new ComboBox();
@@ -48,7 +48,7 @@ public class ReservationView {
     TableColumn tableColumnDate = new TableColumn("Dato");
     TableColumn tableColumnSize = new TableColumn("Antal billeter");
 
-    public ReservationView() {
+    public ReservationView(Stage primaryStage) {
         vBoxName.getChildren().addAll(labelName,textFieldName);
         vBoxMovie.getChildren().addAll(labelMovie,comboBoxMovie);
         vBoxDate.getChildren().addAll(labelDate,datePicker);
@@ -60,7 +60,7 @@ public class ReservationView {
         borderPane.setRight(tableView);
         setSize();
         tableViewSetup();
-        buttonClick();
+        buttonClick(primaryStage);
     }
 
     public BorderPane getBorderPane() {
@@ -110,10 +110,9 @@ public class ReservationView {
     private void tableViewSetup(){
         tableView.getColumns().addAll(tableColumnName,tableColumnMovie,tableColumnDate,tableColumnSize);
     }
-    private void buttonClick(){
-        Stage primaryStage = new Stage();
+    private void buttonClick(Stage primaryStage){
         buttonBack.setOnAction(event -> {
-            Menu menu = new Menu();
+            Menu menu = new Menu(primaryStage);
             Scene scene = new Scene(menu.getBorderPane(),1200,800);
             primaryStage.setScene(scene);
             primaryStage.show();

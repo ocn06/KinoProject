@@ -6,13 +6,15 @@ public class Reservation {
 
     private String reservationName;
     private Movie movie;
-    private int seatNumber;
-    private int movieHall;
-    private Date reservationDate;
+    private String seatNumber;
+    private String movieHall;
+    private String genre;
+    private String reservationDate;
+    private String reservationTime;
     private int reservationSize;
     private int reservationPrice;
 
-    public Reservation(String reservationName, Movie movie, int seatNumber, int movieHall, Date reservationDate, int reservationSize, int reservationPrice) {
+    public Reservation(String reservationName, Movie movie, String seatNumber, String movieHall, String reservationDate, int reservationSize, int reservationPrice) {
         this.reservationName = reservationName;
         this.movie = movie;
         this.seatNumber = seatNumber;
@@ -21,6 +23,23 @@ public class Reservation {
         this.reservationSize = reservationSize;
         this.reservationPrice = reservationPrice;
     }
+
+    public Reservation(String reservationName, String seatNumber, String movieHall, int reservationSize, int reservationPrice) {
+        this.reservationName = reservationName;
+        this.seatNumber = seatNumber;
+        this.movieHall = movieHall;
+        this.reservationSize = reservationSize;
+        this.reservationPrice = reservationPrice;
+    }
+
+    public Reservation(String reservationName, String genre, String seatNumber, String movieHall, String reservationTime) {
+        this.reservationName = reservationName;
+        this.genre = genre;
+        this.seatNumber = seatNumber;
+        this.movieHall = movieHall;
+        this.reservationTime = reservationTime;
+    }
+
 
     public Reservation () {
 
@@ -34,27 +53,27 @@ public class Reservation {
         this.reservationName = reservationName;
     }
 
-    public int getSeatNumber() {
+    public String getSeatNumber() {
         return seatNumber;
     }
 
-    public void setSeatNumber(int seatNumber) {
+    public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
     }
 
-    public int getMovieHall() {
+    public String getMovieHall() {
         return movieHall;
     }
 
-    public void setMovieHall(int movieHall) {
+    public void setMovieHall(String movieHall) {
         this.movieHall = movieHall;
     }
 
-    public Date getReservationDate() {
+    public String getReservationDate() {
         return reservationDate;
     }
 
-    public void setReservationDate(Date reservationDate) {
+    public void setReservationDate(String reservationDate) {
         this.reservationDate = reservationDate;
     }
 
@@ -72,6 +91,21 @@ public class Reservation {
 
     public void setReservationPrice(int reservationPrice) {
         this.reservationPrice = reservationPrice;
+    }
+    public String getReservationTime() {
+        return reservationTime;
+    }
+
+    public void setReservationTime(String reservationTime) {
+        this.reservationTime = reservationTime;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
 }

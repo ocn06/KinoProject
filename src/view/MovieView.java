@@ -36,7 +36,7 @@ public class MovieView {
     VBox vBoxComplete = new VBox();
     HBox hBoxButton = new HBox();
 
-    public MovieView() {
+    public MovieView(Stage primaryStage) {
 
         vBoxName.getChildren().addAll(labelName,textFieldName);
         vBoxGenre.getChildren().addAll(labelGenre,comboBoxGenre);
@@ -47,7 +47,7 @@ public class MovieView {
         borderPane.setLeft(vBoxComplete);
         borderPane.setPadding(new Insets(50));
         setSize();
-        buttonClick();
+        buttonClick(primaryStage);
     }
 
     public BorderPane getBorderPane() {
@@ -61,10 +61,9 @@ public class MovieView {
         comboBoxGenre.setPrefSize(200,50);
         buttonBack.setPrefSize(100,100);
     }
-    private void buttonClick(){
-        Stage primaryStage = new Stage();
+    private void buttonClick(Stage primaryStage){
         buttonBack.setOnAction(event -> {
-            Menu menu = new Menu();
+            Menu menu = new Menu(primaryStage);
             Scene scene = new Scene(menu.getBorderPane(),1200,800);
             primaryStage.setScene(scene);
             primaryStage.show();

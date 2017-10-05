@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Menu menu = new Menu();
+        Menu menu = new Menu(primaryStage);
         primaryStage.setScene(new Scene(menu.getBorderPane(), 1200, 800));
         primaryStage.show();
 
