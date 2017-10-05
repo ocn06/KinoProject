@@ -18,46 +18,7 @@ public class Movie {
         this.movieDescription = movieDescription;
     }
 
-    public String getMovieName() {
-        return movieName;
+    public Movie() {
+
     }
-
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
-    }
-
-    public String getMovieGenre() {
-        return movieGenre;
-    }
-
-    public void setMovieGenre(String movieGenre) {
-        this.movieGenre = movieGenre;
-    }
-
-    public int getMovieTime() {
-        return movieTime;
-    }
-
-    public void setMovieTime(int movieTime) {
-        this.movieTime = movieTime;
-    }
-
-    public Date getMoviePeriod() {
-        return moviePeriod;
-    }
-
-    public void setMoviePeriod(Date moviePeriod) {
-        this.moviePeriod = moviePeriod;
-    }
-
-    public String getMovieDescription() {
-        return movieDescription;
-    }
-
-    public void setMovieDescription(String movieDescription) {
-        this.movieDescription = movieDescription;
-    }
-
-
-
 }
