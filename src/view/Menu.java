@@ -15,13 +15,13 @@ import javafx.stage.Stage;
  * Created by Ejer on 03-10-2017.
  */
 public class Menu {
-    Button buttonAddMovie = new Button("Tilføj film");
-    Button buttonReservation = new Button("ReservationView");
-    Button buttonMovie = new Button("Film");
+    Button buttonAddMovie = new Button("Opret filmvisning");
+    Button buttonReservation = new Button("Reservér sæder");
+    Button buttonMovie = new Button("Tilføj film");
     VBox vBox = new VBox();
     BorderPane borderPane = new BorderPane();
 
-    public Menu() {
+    public Menu(Stage primaryStage) {
         vBox.getChildren().addAll(buttonAddMovie,buttonReservation,buttonMovie);
         vBox.setSpacing(100);
         borderPane.setLeft(vBox);
@@ -29,30 +29,32 @@ public class Menu {
         buttonAddMovie.setPrefSize(200,200);
         buttonMovie.setPrefSize(200,200);
         buttonReservation.setPrefSize(200,200);
-        buttonClick();
+        buttonClick(primaryStage);
     }
 
     public BorderPane getBorderPane() {
         return borderPane;
     }
 
-    private void buttonClick(){
-        Stage primaryStage = new Stage();
+    private void buttonClick(Stage primaryStage){
 
         buttonAddMovie.setOnAction(event -> {
-            AddMovie addMovie = new AddMovie();
+            AddMovie.comboBoxSalItems();
+            AddMovie.ComboBoxMovieItems();
+            AddMovie.comboBoxTimeItems();
+            AddMovie addMovie = new AddMovie(primaryStage);
             Scene scene = new Scene(addMovie.getBorderPane(),1200,800);
             primaryStage.setScene(scene);
             primaryStage.show();
         });
         buttonReservation.setOnAction(event -> {
-            ReservationView reservationView = new ReservationView();
+            ReservationView reservationView = new ReservationView(primaryStage);
             Scene scene = new Scene(reservationView.getBorderPane(),1200,800);
             primaryStage.setScene(scene);
             primaryStage.show();
         });
         buttonMovie.setOnAction(event -> {
-            MovieView movieView = new MovieView();
+            MovieView movieView = new MovieView(primaryStage);
             Scene scene = new Scene(movieView.getBorderPane(),1200,800);
             primaryStage.setScene(scene);
             primaryStage.show();
