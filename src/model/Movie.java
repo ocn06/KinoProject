@@ -17,4 +17,8 @@ public class Movie {
         this.moviePeriod = moviePeriod;
         this.movieDescription = movieDescription;
     }
+
+    public Movie() {
+
+    }
 }

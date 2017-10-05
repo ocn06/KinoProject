@@ -22,6 +22,10 @@ public class Reservation {
         this.reservationPrice = reservationPrice;
     }
 
+    public Reservation () {
+
+    }
+
     public String getReservationName() {
         return reservationName;
     }
